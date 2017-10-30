@@ -3,6 +3,7 @@
   "version": "3.4.5",
   "description": "A simple Time-Ago component for ReactJs",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "cpflow": "find ./src -name '*.js' -not -path '*/__*' | while read filepath; do cp $filepath `echo $filepath | sed 's/\\/src\\//\\/lib\\//g'`.flow; done",
     "babel": "babel src/ --out-dir lib/",
@@ -37,6 +38,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
+    "@types/react": "^16.0.0",
     "ava": "^0.22.0",
     "babel-cli": "^6.14.0",
     "babel-eslint": "^8.0.1",

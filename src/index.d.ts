@@ -1,6 +1,6 @@
 /// <reference types="react" />
 
-declare module "react-timeago" {
+declare module "@mil/react-timeago" {
     export type Unit = "second" | "minute" | "hour" | "day" | "week" | "month" | "year";
     export type Suffix = "ago" | "from now";
 

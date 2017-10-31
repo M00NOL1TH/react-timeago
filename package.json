@@ -6,9 +6,10 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "cpflow": "find ./src -name '*.js' -not -path '*/__*' | while read filepath; do cp $filepath `echo $filepath | sed 's/\\/src\\//\\/lib\\//g'`.flow; done",
+    "cptyping": "cpx './src/index.d.ts' lib",
     "babel": "babel src/ --out-dir lib/",
     "example": "browserify -t babelify --debug examples/simple/index.js -o examples/simple/bundle.js",
-    "build": "npm run babel && npm run cpflow && npm run example",
+    "build": "npm run babel && npm run cpflow && npm run cptyping && npm run example",
     "prepare": "npm run build",
     "test": "ava --require babel-register",
     "coverall": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
@@ -53,6 +54,7 @@
     "babelify": "^7.3.0",
     "browserify": "^14.5.0",
     "coveralls": "^3.0.0",
+    "cpx": "^1.5.0",
     "enzyme": "^3.1.0",
     "eslint": "^4.9.0",
     "eslint-config-standard": "^10.2.1",
